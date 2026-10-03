@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"hasVerityBaby",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"hasVerityBaby",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
