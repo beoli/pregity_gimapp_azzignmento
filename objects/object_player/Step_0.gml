@@ -1,10 +1,11 @@
 var stepX = 0;
 var stepY = 0;
 
-if (keyboard_check_pressed(ord("W"))) { stepX =  0; stepY = -1; }
-if (keyboard_check_pressed(ord("S"))) { stepX =  0; stepY =  1; }
-if (keyboard_check_pressed(ord("A"))) { stepX = -1; stepY =  0; }
-if (keyboard_check_pressed(ord("D"))) { stepX =  1; stepY =  0; }
+
+if (keyboard_check_pressed(ord("W"))) { stepX =  0; stepY = -1; audio_play_sound(sound_jalan, 2, 0);}
+if (keyboard_check_pressed(ord("S"))) { stepX =  0; stepY =  1; audio_play_sound(sound_jalan, 2, 0);}
+if (keyboard_check_pressed(ord("A"))) { stepX = -1; stepY =  0; audio_play_sound(sound_jalan, 2, 0);}
+if (keyboard_check_pressed(ord("D"))) { stepX =  1; stepY =  0; audio_play_sound(sound_jalan, 2, 0);}
 
 if (keyboard_check(vk_shift))
 {
@@ -18,6 +19,8 @@ if (keyboard_check(vk_shift))
 
 else if (keyboard_check_released(vk_shift))
 {
+	
+	audio_play_sound(sound_verityJump, 1, 0);
     var jumpDistance = clamp(floor(global.chargeTime), 0, 3);
 
     if (jumpDistance >= 1 && (global.jumpDirectionX != 0 || global.jumpDirectionY != 0))
@@ -113,6 +116,7 @@ if (keyboard_check_pressed(vk_space))
     }
     else if (sprite_index == sprite_player_pregnant) {
         sprite_index = sprite_player;    
+		audio_play_sound(sound_verityMelahirkan, 1, 0);
 		global.sprite_player_rightnow = sprite_index;
 		var spawnX = global.playerblockX + 1;
 		var spawnY = global.playerblockY;
